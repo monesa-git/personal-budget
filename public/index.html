@@ -198,7 +198,7 @@ function createChart(){
 }
 
 function getBudget(){
-    axios.get('/budget').then(function(res){
+    axios.get('http://localhost:3000/budget').then(function(res){
             console.log(res.data.myBudget.title);
             for(var i=0; i<res.data.myBudget.length; i++){
                 dataChart.datasets[0].data[i] = res.data.myBudget[i].budget;
@@ -250,7 +250,7 @@ var array = [];
 var range = [];
 var backgroundColor = [];
 
-d3.json("/budget", function(data) {
+d3.json("http://localhost:3000/budget", function(data) {
     console.log(data["myBudget"]);
     
     for(var i = 0; i<data["myBudget"].length; i++){

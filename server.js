@@ -1,12 +1,14 @@
 const express = require('express');
+const cors = require('cors');
+const app = express();
+const port = 3000;
 
-const app = express()
+app.use(cors());
 
-const port = 3000
-
-app.use('/',express.static('public'));
+// app.use('/',express.static('public'));
 
 const fs = require('fs');
+
 
 
 app.get('/budget',(req, res) => {
@@ -14,7 +16,7 @@ app.get('/budget',(req, res) => {
         if (err) throw err;
         res.json(JSON.parse(data));
     });
-});
+ });
 
 app.get('/hello', (req, res) => {
     res.send('Hello World');
