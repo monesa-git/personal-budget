@@ -75,7 +75,7 @@ app.post('/putBudget', (req, res) => {
                         .then((newData) => {
                             // console.log(newData);
                             mongoose.connection.close();
-                            return res.status(400).send("Record inserted Successfully");
+                            return res.status(200).send("Record inserted Successfully");
                         })
                         .catch((connectionError) => {
                             mongoose.connection.close();
